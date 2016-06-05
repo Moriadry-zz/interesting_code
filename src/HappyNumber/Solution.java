@@ -1,6 +1,4 @@
-package SingleNumber;
-
-import java.util.Arrays;
+package HappyNumber;
 
 /**
  * Created by dingpeng on 16/6/2.
