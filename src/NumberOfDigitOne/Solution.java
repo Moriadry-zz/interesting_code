@@ -2,31 +2,27 @@ package NumberOfDigitOne;
 
 /**
  * Created by dingpeng on 16/6/3.
+ * https://leetcode.com/discuss/86118/share-my-0ms-java-code
  */
-public class Solution {
-    public static void main(String[] args) {
-        String s = "12";
-        System.out.println(s.indexOf("1")+1);
-        System.out.println(s.substring(0));
 
-        System.out.println(new Solution().countDigitOne(2));
-    }
-    public int countDigitOne(int target) {
-        StringBuilder sb = new StringBuilder();
-        if(target<=0){
+public class Solution {
+    public int countDigitOne(int n) {
+        if (n <= 0) {
             return 0;
         }
-        if(target==1){
-            return 1;
-        }
-        for (int i = 1; i <= target; i++) {
-            sb.append(i);
-        }
         int count = 0;
-        String str = sb.toString();
-        while(str.contains("1")){
-            count++;
-            str.substring(str.indexOf("1")+1);
+        int copyN = n;
+        for (int weight = 1; n > 0; weight *= 10) {
+            int complete = n / 10;
+            int lsb = n % 10;
+            if (lsb < 1) {
+                count += weight * complete;
+            } else if (lsb > 1) {
+                count += weight * (complete + 1);
+            } else {  // lsb == 1
+                count += weight * complete + copyN % weight + 1;
+            }
+            n = complete;
         }
         return count;
     }
