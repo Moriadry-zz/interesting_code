@@ -17,7 +17,7 @@ public class Solution {
         }
     }
 
-    // two slow, consider more fast solution.
+    // too slow, consider more fast solution.
     public int maxDepth(TreeNode root) {
         return maxDepth(root, 0);
     }
