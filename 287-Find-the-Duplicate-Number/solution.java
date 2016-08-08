@@ -5,6 +5,6 @@ public class Solution {
             if (nums[i] == nums[i-1])
                 return num[i];
         }
-    }
+        return 0;
     }
 }
