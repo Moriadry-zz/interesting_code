@@ -3,7 +3,7 @@ public class Solution {
         Arrays.sort(nums);
         for (int i = 1; i < nums.length; i++) {
             if (nums[i] == nums[i-1])
-                return num[i];
+                return nums[i];
         }
         return 0;
     }
