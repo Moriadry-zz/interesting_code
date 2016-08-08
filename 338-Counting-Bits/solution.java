@@ -4,6 +4,7 @@ public class Solution {
         for(int i=0; i<=num; i++) {
          result[i] = hammingWeight(i);   
         }
+        return result;
     }
      public int hammingWeight(int n) {
         int sum = 0;
