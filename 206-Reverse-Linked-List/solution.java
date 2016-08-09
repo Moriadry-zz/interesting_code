@@ -10,7 +10,8 @@ public class Solution {
     public ListNode reverseList(ListNode head) {
         if(head.next != null) {
             head.next = new ListNode(head.val);
-            reverseList(head.next);
+            return reverseList(head.next);
         }
+        return head;
     }
 }
