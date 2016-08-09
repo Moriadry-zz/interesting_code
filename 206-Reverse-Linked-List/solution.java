@@ -8,6 +8,9 @@
  */
 public class Solution {
     public ListNode reverseList(ListNode head) {
+        if(head=null){
+            return null;
+        }
         if(head.next != null) {
             head.next = new ListNode(head.val);
             return reverseList(head.next);
