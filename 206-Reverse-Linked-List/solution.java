@@ -8,13 +8,18 @@
  */
 public class Solution {
     public ListNode reverseList(ListNode head) {
-        if(head=null){
+        if(head==null){
             return null;
         }
         if(head.next != null) {
-            head.next = new ListNode(head.val);
+            int temp = head.val;
+            head.val = head.next.val;
+            head.next = new ListNode(temp);
             return reverseList(head.next);
         }
         return head;
     }
 }
+
+1 2 3 4
+2 1 3 4
