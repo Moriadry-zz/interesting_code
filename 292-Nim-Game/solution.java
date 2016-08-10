@@ -5,8 +5,7 @@ public class Solution {
         } else if(n ==4 ) {
             return false;
         } else {
-            n--;
-            return canWinNim(n);
+            return canWinNim(n-1);
         }
     }
 }
