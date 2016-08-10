@@ -6,7 +6,7 @@ public class Solution {
             return false;
         } else {
             n--;
-            return !canWinNim(n);
+            return canWinNim(n);
         }
     }
 }
