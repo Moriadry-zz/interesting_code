@@ -1,15 +1,18 @@
 public class Solution {
-    public boolean canConstruct(String ransomNote, String magazine) {
-        if (ransomNote==null || ransomNote.length() == 0) return true;
-        if (magazine==null || magazine.length() == 0) return false;
-        int[] counts = new int[256];
-        for (char c: magazine.toCharArray()) {
-            counts[c]++;
-        }
-        for (char c: ransomNote.toCharArray()) {
-            if (counts[c]==0) return false;
-            counts[c]--;
-        }
-        return true;
+  public boolean canConstruct(String ransomNote, String magazine) {
+    char[] r = ransomNote.toCharArray();
+    char[] m = magazine.toCharArray();
+    Map<Character, Integer> map = new HashMap<Character, Integer>();
+    for(char ch : m){
+        Integer count = map.get(ch);
+        if(count == null) count = 0;
+        map.put(ch, count+1);
+    }
+    for(char ch : r){
+        Integer count = map.get(ch);
+        if(count == null || count == 0) return false;
+        map.put(ch, count-1);
+    }
+    return true;
     }
 }
